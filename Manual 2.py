@@ -45,13 +45,13 @@ def move(step, current_position_x, current_position_y):
     where = input("up down right left?")
     word = "GG"
     while(word == "GG"):
-        if(where == "up"):
+        if(where == "up" or where == "w"):
             word = where
-        elif(where == "down"):
+        elif(where == "down"  or where == "s"):
             word = where
-        elif(where == "right"):
+        elif(where == "right" or where == "d"):
             word = where
-        elif(where == "left"):
+        elif(where == "left" or where == "a"):
             word = where
         else:
             word = "GG"
@@ -75,10 +75,10 @@ def move(step, current_position_x, current_position_y):
         print("Found finish on left ")
         return False
 
-    can_move_up = where == "up" and current_position_y >= 1 and map[current_position_y-1][current_position_x] == 0
-    can_move_down = where == "down" and current_position_y <= 4 and map[current_position_y+1][current_position_x] == 0 
-    can_move_right = where == "right" and current_position_x <= 4 and map[current_position_y][current_position_x+1] == 0
-    can_move_left = where == "left" and current_position_x >= 1 and map[current_position_y][current_position_x-1] == 0
+    can_move_up = (where == "up" or where == "u") and current_position_y >= 1 and map[current_position_y-1][current_position_x] == 0
+    can_move_down = (where == "down" or where == "s") and current_position_y <= 4 and map[current_position_y+1][current_position_x] == 0 
+    can_move_right = (where == "right" or where == "d") and current_position_x <= 4 and map[current_position_y][current_position_x+1] == 0
+    can_move_left = (where == "left" or where == "a") and current_position_x >= 1 and map[current_position_y][current_position_x-1] == 0
 
     if(can_move_up or can_move_down or can_move_right or can_move_left != True):
         print("You kill yourself =)")

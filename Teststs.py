@@ -1,16 +1,4 @@
-where = input("up down right left?")
+import keyboard
 
-word = "GG"
-while(word == "GG"):
-    if(where == "up"):
-        word = where
-    elif(where == "down"):
-        word = where
-    elif(where == "right"):
-        word = where
-    elif(where == "left"):
-        word = where
-    else:
-        word = "GG"
-        where = input("up down right left?")
-print(where)
+while(keyboard.record("w")):
+    print("NICE")
