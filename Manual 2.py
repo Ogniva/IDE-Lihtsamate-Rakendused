@@ -1,4 +1,4 @@
-
+import keyboard
 
 map4=[
     [12,0,1,0,0,0],
@@ -25,7 +25,7 @@ for i in map:  # Вывод мапы
     print(i)
 
 Ready = input("You are ready? ")
-if(Ready == "Yes" or Ready == "yes" or Ready == "ye"):
+if(Ready == "Yes" or Ready == "yes" or Ready == "ye" or Ready == "y"):
     print("start")
 else:
     print("OOOOOOOKAAAAAAY next time")
@@ -42,16 +42,16 @@ def move(step, current_position_x, current_position_y):
     
     map[current_position_y][current_position_x]=0
 
-    where = input("up down right left?")
+    where = input("up down right left?", keyboard.is_pressed(''))
     word = "GG"
     while(word == "GG"):
-        if(where == "up"):
+        if(where == "up" or keyboard.is_pressed('w')):
             word = where
-        elif(where == "down"):
+        elif(where == "down" or keyboard.is_pressed('s')):
             word = where
-        elif(where == "right"):
+        elif(where == "right" or keyboard.is_pressed('d')):
             word = where
-        elif(where == "left"):
+        elif(where == "left" or keyboard.is_pressed('a')):
             word = where
         else:
             word = "GG"
