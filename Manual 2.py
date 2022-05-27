@@ -45,6 +45,7 @@ def move(step, current_position_x, current_position_y):
     where = input("up down right left?", keyboard.is_pressed(''))
     word = "GG"
     while(word == "GG"):
+<<<<<<< HEAD
         if(where == "up" or keyboard.is_pressed('w')):
             word = where
         elif(where == "down" or keyboard.is_pressed('s')):
@@ -52,6 +53,15 @@ def move(step, current_position_x, current_position_y):
         elif(where == "right" or keyboard.is_pressed('d')):
             word = where
         elif(where == "left" or keyboard.is_pressed('a')):
+=======
+        if(where == "up" or where == "w"):
+            word = where
+        elif(where == "down"  or where == "s"):
+            word = where
+        elif(where == "right" or where == "d"):
+            word = where
+        elif(where == "left" or where == "a"):
+>>>>>>> 10a5eb2948dce3e62bab068177a459c893487157
             word = where
         else:
             word = "GG"
@@ -75,10 +85,10 @@ def move(step, current_position_x, current_position_y):
         print("Found finish on left ")
         return False
 
-    can_move_up = where == "up" and current_position_y >= 1 and map[current_position_y-1][current_position_x] == 0
-    can_move_down = where == "down" and current_position_y <= 4 and map[current_position_y+1][current_position_x] == 0 
-    can_move_right = where == "right" and current_position_x <= 4 and map[current_position_y][current_position_x+1] == 0
-    can_move_left = where == "left" and current_position_x >= 1 and map[current_position_y][current_position_x-1] == 0
+    can_move_up = (where == "up" or where == "u") and current_position_y >= 1 and map[current_position_y-1][current_position_x] == 0
+    can_move_down = (where == "down" or where == "s") and current_position_y <= 4 and map[current_position_y+1][current_position_x] == 0 
+    can_move_right = (where == "right" or where == "d") and current_position_x <= 4 and map[current_position_y][current_position_x+1] == 0
+    can_move_left = (where == "left" or where == "a") and current_position_x >= 1 and map[current_position_y][current_position_x-1] == 0
 
     if(can_move_up or can_move_down or can_move_right or can_move_left != True):
         print("You kill yourself =)")
